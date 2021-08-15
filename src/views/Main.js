@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import BookList from "./BookList";
+import { Link } from "react-router-dom";
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.props.clearBooks();
+  }
+
   render() {
     return (
       <div className='list-books'>
@@ -15,9 +21,9 @@ class Main extends Component {
           />
         </div>
         <div className='open-search'>
-          <button onClick={() => this.setState({ showSearchPage: true })}>
-            Add a book
-          </button>
+          <Link to='/search' className='open-search'>
+            Add Book
+          </Link>
         </div>
       </div>
     );

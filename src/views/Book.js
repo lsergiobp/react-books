@@ -23,7 +23,7 @@ const Book = (props) => {
         <div className='book-shelf-changer'>
           <select
             onChange={(e) => props.updateBook(e.target.value)}
-            defaultValue={props.book.shelf}
+            defaultValue={props.book.shelf ? props.book.shelf : "none"}
           >
             <option value='move' disabled>
               Move to...
