@@ -48,8 +48,12 @@ class BooksApp extends React.Component {
           searchBooks: [],
         }));
       } else {
+        let filteredBooks = searchBooks.map((b) => {
+          let currentBook = this.state.books.find((cb) => cb.title === b.title);
+          return currentBook ? { ...b, ...currentBook } : b;
+        });
         this.setState(() => ({
-          searchBooks,
+          searchBooks: filteredBooks,
         }));
       }
     });
