@@ -1,7 +1,7 @@
 import React from "react";
 
 const formatAuthors = (authors) => {
-  return authors != null ? authors.map((a) => `${a}`) : "";
+  return authors != null ? authors.join(", ") : "";
 };
 
 const getThumbnail = (imageLinks) => {
@@ -9,7 +9,6 @@ const getThumbnail = (imageLinks) => {
 };
 
 const Book = (props) => {
-  console.log(props.book);
   return (
     <div className='book'>
       <div className='book-top'>

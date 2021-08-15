@@ -1,37 +1,35 @@
-import React from 'react'
-import * as BooksAPI from './api/BooksAPI'
-import './styles/App.css'
-import Main from './views/Main'
-import { Route } from 'react-router-dom'
+import React from "react";
+import * as BooksAPI from "./api/BooksAPI";
+import "./styles/App.css";
+import Main from "./views/Main";
+import { Route } from "react-router-dom";
 
 class BooksApp extends React.Component {
   state = {
-    books: []
-  }
+    books: [],
+  };
 
   componentDidMount() {
     this.getAllBooks();
   }
 
   getAllBooks() {
-    BooksAPI.getAll()
-      .then((books) => {
-        this.setState(() => ({
-          books
-        }))
-        console.log(books)
-      })
+    BooksAPI.getAll().then((books) => {
+      this.setState(() => ({
+        books,
+      }));
+    });
   }
 
   render() {
     return (
-      <div className="app">
+      <div className='app'>
         <Route exact path='/'>
           <Main books={this.state.books} />
         </Route>
       </div>
-    )
+    );
   }
 }
 
-export default BooksApp
+export default BooksApp;
