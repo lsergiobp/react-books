@@ -12,9 +12,21 @@ const BookList = (props) => {
 
   return (
     <div>
-      <BookShelf books={currently} title='Currently Reading' />
-      <BookShelf books={want} title='Want to Read' />
-      <BookShelf books={read} title='Read' />
+      <BookShelf
+        books={currently}
+        title='Currently Reading'
+        updateBook={(book, shelf) => props.updateBook(book, shelf)}
+      />
+      <BookShelf
+        books={want}
+        title='Want to Read'
+        updateBook={(book, shelf) => props.updateBook(book, shelf)}
+      />
+      <BookShelf
+        books={read}
+        title='Read'
+        updateBook={(book, shelf) => props.updateBook(book, shelf)}
+      />
     </div>
   );
 };

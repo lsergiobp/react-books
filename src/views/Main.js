@@ -9,7 +9,10 @@ class Main extends Component {
           <h1>MyReads</h1>
         </div>
         <div className='list-books-content'>
-          <BookList books={this.props.books} />
+          <BookList
+            books={this.props.books}
+            updateBook={(book, shelf) => this.props.updateBook(book, shelf)}
+          />
         </div>
         <div className='open-search'>
           <button onClick={() => this.setState({ showSearchPage: true })}>
