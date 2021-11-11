@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import BookList from "./BookList";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.props.clearBooks();
+  }
+  
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+    clearBooks: PropTypes.func.isRequired,
+    updateBook: PropTypes.func.isRequired,
   }
 
   render() {

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const formatAuthors = (authors) => {
   return authors != null ? authors.join(", ") : "";
@@ -40,5 +41,10 @@ const Book = (props) => {
     </div>
   );
 };
+
+Book.propTypes = {
+  book: PropTypes.object.isRequired,
+  updateBook: PropTypes.func.isRequired,
+}
 
 export default Book;
